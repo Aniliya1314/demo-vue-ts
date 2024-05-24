@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue + TS + Pinia + PrimeVue</title>
+  </head>
+  <body>
+    <div id="app">
+      <style>
+        .first-loading-wrp {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 90vh;
+          min-height: 90vh;
+        }
+        .first-loading-wrp > h1 {
+          font-size: 30px;
+          font-weight: bolder;
+        }
+        .first-loading-wrp .loading-wrp {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 98px;
+        }
+        .dot {
+          position: relative;
+          box-sizing: border-box;
+          display: inline-block;
+          width: 64px;
+          height: 64px;
+          font-size: 64px;
+          transform: rotate(45deg);
+          animation: antRotate 1.2s infinite linear;
+        }
+        .dot i {
+          position: absolute;
+          display: block;
+          width: 28px;
+          height: 28px;
+          background-color: #1890ff;
+          border-radius: 100%;
+          opacity: 0.3;
+          transform: scale(0.7);
+          transform-origin: 50% 50%;
+          animation: antSpinMove 1s infinite linear alternate;
+        }
+        .dot i:first-child {
+          top: 0;
+          left: 0;
+        }
+        .dot i:nth-child(2) {
+          top: 0;
+          right: 0;
+          -webkit-animation-delay: 0.4s;
+          -moz-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+        }
+        .dot i:nth-child(3){
+          right: 0;
+          bottom: 0;
+          -webkit-animation-delay: 0.8s;
+          -moz-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+        }
+        .dot i:last-child {
+          bottom: 0;
+          left: 0;
+          -webkit-animation-delay: 1.2s;
+          -moz-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+        }
+
+        @keyframes antRotate {
+          to {
+            -webkit-transform: rotate(405deg);
+            -moz-transform: rotate(405deg);
+            transform: rotate(405deg);
+          }
+        }
+
+        @keyframes antSpinMove {
+          to {
+            opacity: 1;
+          }
+        }
+      </style>
+      <!-- vue还没有挂载前的loading态,可使用Slow-3G模式查看 -->
+      <div id="vite-vue-ts-pinia-primevue">
+        <div class="first-loading-wrp">
+          <div class="loading-wrp">
+            <span class="dot">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </div>
+          <h1>vite-vue-ts-pinia-primevue</h1>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
